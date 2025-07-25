@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Supplier Dashboard</title>
+ <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+ <h1>Welcome, Supplier!</h1>
+ <a href="/supplier/add">Add New Item</a>
+ <h2>Your Inventory</h2>
+ <ul>
+ {% for item in inventory %}
+ <li>{{ item.name }} - Rs.{{ item.price }}</li>
+ {% endfor %}
+ </ul>
+</body>
+</html>

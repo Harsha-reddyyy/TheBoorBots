@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Vendor Portal</title>
+ <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+ <h1>Welcome, Vendor!</h1>
+ <h2>Available Supplies</h2>
+ <ul>
+ {% for item in inventory %}
+ <li>{{ item.name }} - Rs.{{ item.price }}
+ <form action="/order" method="post" style="display:inline;">
+ <input type="hidden" name="item_name" value="{{ item.name }}">
+ <input type="number" name="quantity" placeholder="Qty" required>
+ <button type="submit">Order</button>
+ </form>
+ </li>
+ {% endfor %}
+ </ul>
+</body>
+</html>
